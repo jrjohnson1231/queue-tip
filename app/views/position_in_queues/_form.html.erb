@@ -1,0 +1,21 @@
+<%= form_with(model: position_in_queue, local: true) do |form| %>
+  <% if position_in_queue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(position_in_queue.errors.count, "error") %> prohibited this position_in_queue from being saved:</h2>
+
+      <ul>
+      <% position_in_queue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :position_description, cols: 40, rows: 10 %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Submit" %>
+  </div>
+<% end %>

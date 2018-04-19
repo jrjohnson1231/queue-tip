@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Current Queue</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @position_in_queues.each do |position_in_queue| %>
+      <tr>
+        <td><%= position_in_queue.user.nickname %></td>
+        <td><%= position_in_queue.description %></td>
+        <td><%= link_to 'Show', position_in_queue_path(position_in_queue) %></td>
+        <td><%= link_to 'Edit', edit_position_in_queue_path(position_in_queue) %></td>
+        <td><%= link_to 'Destroy', position_in_queue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Join Queue', new_position_in_queue_path %>
