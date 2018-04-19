@@ -30,7 +30,6 @@ class PositionInQueuesController < ApplicationController
 
     respond_to do |format|
       if @position_in_queue.save
-        current_user.update_attributes({})
         format.html { redirect_to @position_in_queue, notice: 'Successfully added to queue!.' }
         format.json { render :show, status: :created, location: @position_in_queue }
       else
