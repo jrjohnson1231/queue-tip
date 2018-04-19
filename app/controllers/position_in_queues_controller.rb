@@ -5,7 +5,7 @@ class PositionInQueuesController < ApplicationController
   # GET /position_in_queues
   # GET /position_in_queues.json
   def index
-    @position_in_queues = PositionInQueue.all.order(created_at: 'desc')
+    @position_in_queues = PositionInQueue.all.order(created_at: 'asc')
   end
 
   # GET /position_in_queues/1
