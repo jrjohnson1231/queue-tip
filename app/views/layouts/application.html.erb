@@ -10,7 +10,7 @@
 
   <body>
     <% if user_signed_in? %>
-      <h1>Welcome <%= current_user.nickname %></h1>
+      <h1>Welcome <%= current_user.nickname || current_user.email %></h1>
     <% end %>
     <%= yield %>
   </body>
